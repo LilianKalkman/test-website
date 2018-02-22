@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Homepage from './components/homepage';
 import NotFound from './components/notfound';
 import { BrowserRouter, Match, Miss } from 'react-router';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 
 const Root = () => {

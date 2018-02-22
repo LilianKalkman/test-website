@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        Test App Component
+      <div className="container">
+        <div className="row">test</div>
+        <div className="row">app</div>
+          <div>
+            <button type="button" className="btn btn-primary">Primary</button>
+          </div>
       </div>
     );
   }
