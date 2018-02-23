@@ -32,7 +32,7 @@ class App extends Component {
             Object
             .keys(this.state.products)
             .map(productkey => <Products key={productkey} index={productkey} details={this.state.products[productkey]}/>)
-          }/>
+          }
         </ul>
         <div>
           <Link to="/" type="button" className="btn btn-primary">Back</Link>

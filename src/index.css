@@ -30,3 +30,12 @@
 .btn-primary:hover {
   background-color: rgb(104, 189, 166);
 }
+
+.product-item {
+  margin: 20px;
+}
+
+.product-item img {
+  width: 200px;
+  height: 200px;
+}
