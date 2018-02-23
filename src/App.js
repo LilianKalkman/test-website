@@ -35,24 +35,23 @@ class App extends Component {
 
   render() {
     return (
-      <div className="overall">
-        <ul className="products"> {
-            Object
-            .keys(this.state.products)
-            .map(productkey => <Products key={productkey} index={productkey} details={this.state.products[productkey]}
-              addToOrder={this.addToOrder}/>)
-          }
-        </ul>
-        <div className="order-body">
-          <div className="container">
-              <Order
-                order={this.state.order}
-                products={this.state.products}
-                />
-          </div>
+      <div className="flex-container">
+        <div>
+          <ul className="products">
+            {
+              Object
+              .keys(this.state.products)
+              .map(productkey => <Products key={productkey} index={productkey} details={this.state.products[productkey]}
+                addToOrder={this.addToOrder}/>)
+            }
+          </ul>
+          <Link to="/" type="button" className="btn btn-primary">Back</Link>
         </div>
         <div>
-          <Link to="/" type="button" className="btn btn-primary">Back</Link>
+            <Order
+              order={this.state.order}
+              products={this.state.products}
+              />
         </div>
       </div>
     );

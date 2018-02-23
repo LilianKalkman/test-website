@@ -5,7 +5,17 @@
   font-family: sans-serif;
 } */
 
-.overall {
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  padding: 10px;
+  margin: 20px;
+}
+
+
+/* {
   -ms-flex: 1 4 auto;
       flex: 1 4 auto;
   padding: 2rem;
@@ -15,7 +25,7 @@
   transition: all 0.3s;
   box-shadow: 0 5px 5px rgba(0,0,0,0.1);
   overflow: scroll;
-}
+} */
 
 .header {
   border: 20px solid linear-gradient(to bottom right, rgb(104, 189, 166), rgb(36, 235, 163));
