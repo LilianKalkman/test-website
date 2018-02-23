@@ -7,11 +7,15 @@
 
 .flex-container {
   display: flex;
+  justify-content: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid black;
 }
 
 .flex-container > div {
   padding: 10px;
-  margin: 20px;
 }
 
 
@@ -63,7 +67,8 @@
 }
 
 .order-list {
-  text-align: right;
+  text-align: center;
   margin: 20px;
-  border-bottom: 3px solid black;
+  border: 1px solid grey;
+  padding: 20px;
 }
