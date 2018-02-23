@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import SampleProducts from './sample-products';
+import Products from './components/products';
 
 class App extends Component {
   constructor(){
@@ -27,7 +28,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div className="products">{this.state.products.name}</div>
+        <ul className="products"> {
+            Object
+            .keys(this.state.products)
+            .map(productkey => <Products key={productkey} index={productkey} details={this.state.products[productkey]}/>)
+          }/>
+        </ul>
         <div>
           <Link to="/" type="button" className="btn btn-primary">Back</Link>
         </div>
