@@ -45,7 +45,10 @@ class App extends Component {
         </ul>
         <div className="order-body">
           <div className="container">
-              <Order />
+              <Order
+                order={this.state.order}
+                products={this.state.products}
+                />
           </div>
         </div>
         <div>
