@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import SampleProducts from './sample-products';
 import Products from './components/products';
+import Order from './components/order';
 
 class App extends Component {
   constructor(){
@@ -13,6 +14,7 @@ class App extends Component {
     }
 
     this.loadSampleProducts = this.loadSampleProducts.bind(this);
+    this.addToOrder = this.addToOrder.bind(this);
   }
 
   componentDidMount(){
@@ -25,15 +27,27 @@ class App extends Component {
     });
   }
 
+  addToOrder(productkey){
+    const order = {...this.state.order};
+    order[productkey] = order[productkey] + 1 || 1;
+    this.setState({ order });
+  }
+
   render() {
     return (
       <div>
         <ul className="products"> {
             Object
             .keys(this.state.products)
-            .map(productkey => <Products key={productkey} index={productkey} details={this.state.products[productkey]}/>)
+            .map(productkey => <Products key={productkey} index={productkey} details={this.state.products[productkey]}
+              addToOrder={this.addToOrder}/>)
           }
         </ul>
+        <div className="order-body">
+          <div className="container">
+              <Order />
+          </div>
+        </div>
         <div>
           <Link to="/" type="button" className="btn btn-primary">Back</Link>
         </div>
