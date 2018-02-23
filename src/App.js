@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class App extends Component {
   render() {
     return (
-      <div className="container">
-        <div className="row">test</div>
-        <div className="row">app</div>
-          <div>
-            <button type="button" className="btn btn-primary">Primary</button>
-          </div>
+      <div>
+        <div>
+          <Link to="/" type="button" className="btn btn-primary">Back</Link>
+        </div>
       </div>
     );
   }
