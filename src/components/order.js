@@ -11,7 +11,7 @@ class Order extends Component {
     const product = this.props.products[key];
     const count = this.props.order[key];
     return(
-      <li key={key}>{product.name} {count}</li>
+      <li key={key}>{product.name} {count}x</li>
     )
   }
 
@@ -22,6 +22,7 @@ class Order extends Component {
       <div className="order-list">
         <h2>Your Order</h2>
         {orderIds.map(this.renderOrder)}
+        <h6>Total:</h6>
       </div>
     );
   }

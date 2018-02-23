@@ -35,7 +35,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="overall">
         <ul className="products"> {
             Object
             .keys(this.state.products)
