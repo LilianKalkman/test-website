@@ -36,7 +36,7 @@ class App extends Component {
 
   removeOrder(product){
     const order = {...this.state.order};
-    order[product] = null;
+    delete order[product];
     this.setState({ order });
   }
 
