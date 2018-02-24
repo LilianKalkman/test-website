@@ -15,6 +15,7 @@ class App extends Component {
 
     this.loadSampleProducts = this.loadSampleProducts.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
+    this.removeOrder = this.removeOrder.bind(this);
   }
 
   componentDidMount(){
@@ -30,6 +31,12 @@ class App extends Component {
   addToOrder(productkey){
     const order = {...this.state.order};
     order[productkey] = order[productkey] + 1 || 1;
+    this.setState({ order });
+  }
+
+  removeOrder(product){
+    const order = {...this.state.order};
+    order[product] = null;
     this.setState({ order });
   }
 
@@ -51,6 +58,7 @@ class App extends Component {
             <Order
               order={this.state.order}
               products={this.state.products}
+              removeOrder={this.removeOrder}
               />
         </div>
       </div>

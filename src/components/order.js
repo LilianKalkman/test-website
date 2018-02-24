@@ -11,10 +11,11 @@ class Order extends Component {
   renderOrder(key){
     const product = this.props.products[key];
     const count = this.props.order[key];
-    const removeButton = <button>&times;</button>;
+    const removeButton = <button onClick={()=>this.props.removeOrder(key)}>&times;</button>;
 
     if(!product || product.status === 'unavailable'){
-      return(<li key={key}>Sorry, { product ? product.name : 'product'} is not available</li>)
+      return(<li key={key}>Sorry, { product ? product.name : 'product'} is not available
+    {removeButton}</li>)
     }
 
     return(
@@ -52,6 +53,12 @@ class Order extends Component {
       </div>
     );
   }
+}
+
+Order.propTypes = {
+  removeOrder: React.PropTypes.func.isRequired,
+  products: React.PropTypes.object.isRequired,
+  order: React.PropTypes.object.isRequired,
 }
 
 export default Order;
