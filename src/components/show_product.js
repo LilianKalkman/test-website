@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 
 class ShowProduct extends Component{
+  constructor(){
+    super();
+
+    this.state = { product: {}}
+  }
   render(){
     return(
       <div>

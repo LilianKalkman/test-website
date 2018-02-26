@@ -9,11 +9,10 @@ class Products extends Component {
   }
 
   goToShow(index){
-    const productId = this.props.details.name
+    const productId = this.props.index
     console.log({productId});
     this.context.router.transitionTo(`/products/${productId}`);
   }
-
 
   render(){
     const { details, index } = this.props

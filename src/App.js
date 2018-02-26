@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import SampleProducts from './sample-products';
 import Products from './components/products';
 import Order from './components/order';
-// import base from './base';
+import base from './base';
 
 class App extends Component {
   constructor(){
@@ -13,14 +13,37 @@ class App extends Component {
       products: {},
       order: {},
     }
-
+    this.params = this.state;
     this.loadSampleProducts = this.loadSampleProducts.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
     this.removeOrder = this.removeOrder.bind(this);
   }
 
+  componentWillMount(){
+    this.ref = base.syncState(`/products`,
+    {
+      context: this,
+      state: 'products'
+    });
+
+    const localStorageRef = localStorage.getItem(`order`);
+    if(localStorageRef){
+      this.setState({
+        order: JSON.parse(localStorageRef)
+      })
+    };
+  }
+
+  componentWillUnmount(){
+    base.removeBinding(this.ref);
+  }
+
   componentDidMount(){
     this.loadSampleProducts();
+  }
+
+  componentWillUpdate(nextProps, nextState){
+    localStorage.setItem(`order`, JSON.stringify(nextState.order));
   }
 
   loadSampleProducts(){
