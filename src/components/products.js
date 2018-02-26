@@ -25,7 +25,8 @@ class Products extends Component {
           <p>{details.desc}</p>
           <button onClick={() => this.goToShow(index)}>See Details</button>
           <span><button onClick={() => this.props.addToOrder(index)}>Add to Order</button></span>
-          <span><button>Edit Product</button></span>
+          <button>Edit Product</button><br />
+          <button onClick={()=>this.props.removeProduct()}>Remove Product</button>
         </div>
       </div>
     );

@@ -20,6 +20,7 @@ class App extends Component {
     this.addToOrder = this.addToOrder.bind(this);
     this.removeOrder = this.removeOrder.bind(this);
     this.addProduct = this.addProduct.bind(this);
+    this.removeProduct = this.removeProduct.bind(this);
   }
 
   componentWillMount(){
@@ -75,6 +76,12 @@ class App extends Component {
     this.setState({ products });
   }
 
+  removeProduct(product){
+    const products = {...this.state.products};
+    products[product] = null;
+    this.setState({ products });
+  }
+
   render() {
     return (
       <div className="flex-container">
@@ -84,7 +91,8 @@ class App extends Component {
               Object
               .keys(this.state.products)
               .map(productkey => <Products key={productkey} index={productkey} details={this.state.products[productkey]}
-                addToOrder={this.addToOrder}/>)
+                addToOrder={this.addToOrder}
+                removeProduct={this.removeProduct}/>)
             }
           </ul>
           <AddProduct addProduct={this.addProduct}/>
