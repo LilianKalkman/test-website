@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import SampleProducts from './sample-products';
 import Products from './components/products';
 import Order from './components/order';
+// import base from './base';
 
 class App extends Component {
   constructor(){
