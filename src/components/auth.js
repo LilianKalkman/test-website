@@ -49,13 +49,15 @@ class Auth extends Component {
   }
 
   render(){
-    const logout = <button onClick={()=>this.logout()}>Log out</button>
-    if(!this.state.uid){
-      return(<div>{this.renderLogin()}</div>)
-    }
+    // if(!this.state.uid){
+    //   return(<div>{this.renderLogin()}</div>)
+    // }
 
     return(
-      <div>{this.renderLogin()}</div>
+      <div>
+        {this.renderLogin()}
+        <button onClick={()=>this.logout()}>Log out</button>
+      </div>
     );
   }
 }

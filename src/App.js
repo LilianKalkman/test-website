@@ -5,6 +5,7 @@ import Products from './components/products';
 import Order from './components/order';
 import base from './base';
 import Auth from './components/auth';
+import AddProduct from './components/add_product_form';
 
 class App extends Component {
   constructor(){
@@ -18,6 +19,7 @@ class App extends Component {
     this.loadSampleProducts = this.loadSampleProducts.bind(this);
     this.addToOrder = this.addToOrder.bind(this);
     this.removeOrder = this.removeOrder.bind(this);
+    this.addProduct = this.addProduct.bind(this);
   }
 
   componentWillMount(){
@@ -65,6 +67,14 @@ class App extends Component {
     this.setState({ order });
   }
 
+  addProduct(product){
+    const products = {...this.state.products};
+    const timestamp = Date.now();
+    products[`product-${timestamp}`] = product;
+
+    this.setState({ products });
+  }
+
   render() {
     return (
       <div className="flex-container">
@@ -77,6 +87,7 @@ class App extends Component {
                 addToOrder={this.addToOrder}/>)
             }
           </ul>
+          <AddProduct addProduct={this.addProduct}/>
           <Link to="/" type="button" className="btn btn-primary">Back</Link>
         </div>
         <div>
