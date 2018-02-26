@@ -4,6 +4,7 @@ import SampleProducts from './sample-products';
 import Products from './components/products';
 import Order from './components/order';
 import base from './base';
+import Auth from './components/auth';
 
 class App extends Component {
   constructor(){
@@ -84,6 +85,7 @@ class App extends Component {
               products={this.state.products}
               removeOrder={this.removeOrder}
               />
+            <Auth />
         </div>
       </div>
     );
