@@ -4,7 +4,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import Homepage from './components/homepage';
 import NotFound from './components/notfound';
-import { BrowserRouter, Match, Miss, Switch } from 'react-router';
+import { BrowserRouter, Match, Miss } from 'react-router';
 import Header from './components/header';
 import ShowProduct from './components/show_product';
 

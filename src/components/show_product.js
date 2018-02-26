@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class ShowProduct extends Component{
   render(){
     return(
-      <div>Show product here</div>
+      <div>
+        <div>Show product here</div>
+        <Link to="/products">Back To Products</Link>
+      </div>
     );
   }
 }
