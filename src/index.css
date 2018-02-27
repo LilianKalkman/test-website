@@ -94,3 +94,22 @@ button.facebook {
   color: white;
   padding: 3px;
 }
+
+.order-enter {
+  background: pink;
+  transform: translateX(-120%) rotate(1000deg);
+}
+
+.order-enter-active {
+  background: blue;
+  transform: translateX(0) rotate(0);
+  transition: all 1s;
+}
+
+.order-leave {
+
+}
+
+.order-leave-active {
+
+}
